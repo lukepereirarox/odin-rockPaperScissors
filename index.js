@@ -1,4 +1,4 @@
-const choices = ["r", "p", "s"];
+const choices = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
   let i = Math.floor(Math.random() * 3);
@@ -10,9 +10,9 @@ function getHumanChoice() {
   let humanChoice = window
     .prompt(
       `Enter your Choice
-    r for Rock
-    p for Paper
-    s for Scissors`
+    Rock
+    Paper
+    Scissors`
     )
     .toLowerCase();
   console.log(humanChoice);
@@ -20,3 +20,8 @@ function getHumanChoice() {
 
 getComputerChoice();
 getHumanChoice();
+
+if (!choices.includes(getHumanChoice)) {
+  alert("Enter a Valid Option");
+  getHumanChoice();
+}
