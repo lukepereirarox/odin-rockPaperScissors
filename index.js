@@ -1,4 +1,9 @@
 const choices = ["rock", "paper", "scissors"];
+const typeChart = {
+    rock: {weakTo: 'paper', strongTo: 'scissors'},
+    paper: {weakTo: 'scissors', strongTo: 'rock'},
+    scissors: {weakTo: 'rock', strongTo: 'paper'}
+ }
 
 function getComputerChoice() {
   let i = Math.floor(Math.random() * 3);
@@ -24,4 +29,8 @@ getHumanChoice();
 if (!choices.includes(getHumanChoice)) {
   alert("Enter a Valid Option");
   getHumanChoice();
+}
+
+function playRound(humanChoice, compChoice){
+
 }
