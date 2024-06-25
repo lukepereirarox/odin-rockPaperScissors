@@ -13,7 +13,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanChoice = window
+  let userChoice = window
     .prompt(
       `Enter your Choice
     Rock
@@ -21,24 +21,27 @@ function getHumanChoice() {
     Scissors`
     )
     .toLowerCase();
-  console.log(humanChoice);
+  console.log(userChoice);
+  return userChoice;
 }
 
 getComputerChoice();
-getHumanChoice();
+const humanChoice = getHumanChoice();
 
-if (!choices.includes(getHumanChoice)) {
+if (!choices.includes(humanChoice)) {
   alert("Enter a Valid Option");
-  getHumanChoice();
+  while (!choices.includes(humanchoice)) {
+    userChoice = getHumanChoice;
+  }
 }
 
 function playRound(humanChoice, compChoice) {
   if (humanChoice === compChoice) {
     console.log("Tie");
-  } else if (typeChart(humanChoice).strongTo === compChoice) {
+  } else if (typeChart[humanChoice].strongTo === compChoice) {
     console.log("You win!");
     humanScore++;
-  } else if (typeChart(humanChoice).weakTo === compChoice) {
+  } else if (typeChart[humanChoice].weakTo === compChoice) {
     console.log("You Lose!");
     compScore++;
   }
