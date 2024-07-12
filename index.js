@@ -13,7 +13,6 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-
   console.log(userChoice);
   return userChoice;
 }
@@ -39,17 +38,8 @@ function playGame() {
 
   let humanScore = 0;
   let compScore = 0;
-  while(humanScore<6 || compScore < 6) {
+  while (humanScore < 6 && compScore < 6) {
     let humanChoice = getHumanChoice();
-    while (1) {
-      if (!choices.includes(humanChoice)) {
-        alert("Enter a Valid Option");
-        humanChoice = getHumanChoice();
-      } else {
-        console.log("Human Choice: " + humanChoice);
-        break;
-      }
-    }
 
     let compChoice = getComputerChoice();
     playRound(humanChoice, compChoice);
