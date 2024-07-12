@@ -46,7 +46,7 @@ function playGame() {
 
   let humanScore = 0;
   let compScore = 0;
-  for (let i = 0; i < 5; i++) {
+  while(humanScore<6 || compScore < 6) {
     let humanChoice = getHumanChoice();
     while (1) {
       if (!choices.includes(humanChoice)) {
@@ -62,10 +62,7 @@ function playGame() {
     playRound(humanChoice, compChoice);
   }
 
-  if (humanScore === compScore) {
-    alert("It's a Tie");
-    console.log("Final Tie");
-  } else if (humanScore < compScore) {
+  if (compScore === 5) {
     alert(
       "The Computer Wins!\nYour Score: " +
         humanScore +
