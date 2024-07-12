@@ -13,14 +13,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let userChoice = window
-    .prompt(
-      `Enter your Choice
-    Rock
-    Paper
-    Scissors`
-    )
-    .toLowerCase();
+
   console.log(userChoice);
   return userChoice;
 }
