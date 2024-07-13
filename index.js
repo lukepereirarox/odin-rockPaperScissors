@@ -13,9 +13,9 @@ let userChoice = "";
 let humanScore = 0;
 let compScore = 0;
 
-rock.addEventListener("click", getHumanChoice("rock"));
-paper.addEventListener("click", getHumanChoice("scissors"));
-scissors.addEventListener("click", getHumanChoice("scissors"));
+rock.addEventListener("click", () => getHumanChoice("rock"));
+paper.addEventListener("click",() => getHumanChoice("scissors"));
+scissors.addEventListener("click", () => etHumanChoice("scissors"));
 
 function getComputerChoice() {
   let i = Math.floor(Math.random() * 3);
@@ -26,8 +26,8 @@ function getComputerChoice() {
 
 function getHumanChoice(choiceByButton) {
   userChoice = choiceByButton;
-  console.log(userChoice);
-  playRound(userChoice, compRan);
+  console.log("User Choice :" + userChoice);
+  playRound(userChoice, getComputerChoice());
 }
 
 function playRound(h, c) {
@@ -44,11 +44,15 @@ function playRound(h, c) {
     compScore++;
   }
 
-  console.log(humanScore);
-  console.log(compScore);
+  console.log("Human Score :" + humanScore);
+  console.log("Computer Score :" + compScore);
+
+  if (humanScore === 5 || compScore === 5){
+    endGame();
+  }
 }
 
-function playGame() {
+function endGame() {
   if (compScore === 5) {
     alert(
       "The Computer Wins!\nYour Score: " +
