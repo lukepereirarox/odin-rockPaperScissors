@@ -58,7 +58,7 @@ function endGame() {
       "The Computer Wins!\nYour Score: " +
         humanScore +
         "\nComputer Score : " +
-        CompScore
+        compScore
     );
     console.log("Final Loss");
   } else {
@@ -68,5 +68,3 @@ function endGame() {
     console.log("Final Win");
   }
 }
-
-playGame();
