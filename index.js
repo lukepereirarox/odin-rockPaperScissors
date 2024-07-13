@@ -14,8 +14,8 @@ let humanScore = 0;
 let compScore = 0;
 
 rock.addEventListener("click", () => getHumanChoice("rock"));
-paper.addEventListener("click",() => getHumanChoice("scissors"));
-scissors.addEventListener("click", () => etHumanChoice("scissors"));
+paper.addEventListener("click", () => getHumanChoice("scissors"));
+scissors.addEventListener("click", () => getHumanChoice("scissors"));
 
 function getComputerChoice() {
   let i = Math.floor(Math.random() * 3);
@@ -47,7 +47,7 @@ function playRound(h, c) {
   console.log("Human Score :" + humanScore);
   console.log("Computer Score :" + compScore);
 
-  if (humanScore === 5 || compScore === 5){
+  if (humanScore === 5 || compScore === 5) {
     endGame();
   }
 }
