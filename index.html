@@ -7,11 +7,24 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div id="container">
-      <button id="Rock">Rock</button>
-      <button id="Paper">Paper</button>
-      <button id="Scissors">Scissors</button>
+    <div id="outcome">Win</div>
+    <div id="selectedOption">
+      <div id="humanChoice">Rock</div>
+      <div id="vs">vs</div>
+      <div id="compChoice">Paper</div>
     </div>
+    <div id="options">
+      <button id="Rock" class="option">Rock</button>
+      <button id="Paper" class="option">Paper</button>
+      <button id="Scissors" class="option">Scissors</button>
+    </div>
+    <div id="score">
+      <div id="humanScore">Your Score: 5</div>
+      <div id="compScore">Computer's Score: 5</div>
+    </div>
+
+    <div id="finalWinner">You win the Game</div>
+    <button id="replay" class="option">Play Again?</button>
     <script src="index.js"></script>
   </body>
 </html>
