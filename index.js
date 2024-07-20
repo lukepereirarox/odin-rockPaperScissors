@@ -8,6 +8,13 @@ const typeChart = {
 const rock = document.getElementById("Rock");
 const paper = document.getElementById("Paper");
 const scissors = document.getElementById("Scissors");
+const outcomeDiv = document.getElementById("outcome");
+const humanChoiceDiv = document.getElementById("humanChoice");
+const vsDiv = document.getHumanChoice("vs");
+const compChoiceDiv = document.getElementById("compChoice");
+const humanScoreDiv = document.getElementById("humanScore");
+const compScoreDiv = document.getElementById("compScore");
+const finalWinnerDiv = document.getElementById("finalWinner");
 
 let userChoice = "";
 let humanScore = 0;
