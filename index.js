@@ -9,8 +9,8 @@ const rock = document.getElementById("Rock");
 const paper = document.getElementById("Paper");
 const scissors = document.getElementById("Scissors");
 const outcomeDiv = document.getElementById("outcome");
-const userChoiceDiv = document.getElementById("humanChoice");
-const vsDiv = document.getHumanChoice("vs");
+const userChoiceDiv = document.getElementById("userChoice");
+const vsDiv = document.getElementById("vs");
 const compChoiceDiv = document.getElementById("compChoice");
 const humanScoreDiv = document.getElementById("humanScore");
 const compScoreDiv = document.getElementById("compScore");
@@ -21,7 +21,7 @@ let humanScore = 0;
 let compScore = 0;
 
 rock.addEventListener("click", () => getHumanChoice("rock"));
-paper.addEventListener("click", () => getHumanChoice("scissors"));
+paper.addEventListener("click", () => getHumanChoice("paper"));
 scissors.addEventListener("click", () => getHumanChoice("scissors"));
 
 function getComputerChoice() {
@@ -29,31 +29,35 @@ function getComputerChoice() {
   let compRan = choices[i];
   console.log("Computer choice: " + compRan);
   compChoiceDiv.textContent = compRan;
+  vsDiv.textContent = "vs";
   return compRan;
 }
 
 function getHumanChoice(choiceByButton) {
   userChoice = choiceByButton;
   console.log("User Choice :" + userChoice);
+  userChoiceDiv.textContent = userChoice;
   playRound(userChoice, getComputerChoice());
 }
 
 function playRound(h, c) {
   if (h === c) {
     console.log("Tie");
-    alert("Tie");
+    outcomeDiv.textContent = "Tie";
   } else if (typeChart[h].strongTo === c) {
     console.log("You win!");
-    alert("You win!");
+    outcomeDiv.textContent = "Win";
     humanScore++;
   } else if (typeChart[h].weakTo === c) {
     console.log("You Lose!");
-    alert("You lose!");
+    outcomeDiv.textContent = "Lose";
     compScore++;
   }
 
   console.log("Human Score :" + humanScore);
+  humanScoreDiv.textContent = "Your Score: " + humanScore;
   console.log("Computer Score :" + compScore);
+  compScoreDiv.textContent = "Computer's Score: " + compScore;
 
   if (humanScore === 5 || compScore === 5) {
     endGame();
@@ -62,17 +66,10 @@ function playRound(h, c) {
 
 function endGame() {
   if (compScore === 5) {
-    alert(
-      "The Computer Wins!\nYour Score: " +
-        humanScore +
-        "\nComputer Score : " +
-        compScore
-    );
+    finalWinnerDiv.textContent = "The Computer Wins!";
     console.log("Final Loss");
   } else {
-    alert(
-      "You win!\nYour Score: " + humanScore + "\nComputer Score: " + compScore
-    );
+    finalWinnerDiv.textContent = "You Win!";
     console.log("Final Win");
   }
 }
