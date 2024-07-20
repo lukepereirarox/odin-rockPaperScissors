@@ -9,7 +9,7 @@ const rock = document.getElementById("Rock");
 const paper = document.getElementById("Paper");
 const scissors = document.getElementById("Scissors");
 const outcomeDiv = document.getElementById("outcome");
-const humanChoiceDiv = document.getElementById("humanChoice");
+const userChoiceDiv = document.getElementById("humanChoice");
 const vsDiv = document.getHumanChoice("vs");
 const compChoiceDiv = document.getElementById("compChoice");
 const humanScoreDiv = document.getElementById("humanScore");
@@ -28,6 +28,7 @@ function getComputerChoice() {
   let i = Math.floor(Math.random() * 3);
   let compRan = choices[i];
   console.log("Computer choice: " + compRan);
+  compChoiceDiv.textContent = compRan;
   return compRan;
 }
 
