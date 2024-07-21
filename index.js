@@ -1,13 +1,13 @@
-const choices = ["rock", "paper", "scissors"];
+const choices = ["Rock", "Paper", "Scissors"];
 const typeChart = {
-  rock: { weakTo: "paper", strongTo: "scissors" },
-  paper: { weakTo: "scissors", strongTo: "rock" },
-  scissors: { weakTo: "rock", strongTo: "paper" },
+  Rock: { weakTo: "Paper", strongTo: "Scissors" },
+  Paper: { weakTo: "Scissors", strongTo: "Rock" },
+  Scissors: { weakTo: "Rock", strongTo: "Paper" },
 };
 
-const rock = document.getElementById("Rock");
-const paper = document.getElementById("Paper");
-const scissors = document.getElementById("Scissors");
+const Rock = document.getElementById("Rock");
+const Paper = document.getElementById("Paper");
+const Scissors = document.getElementById("Scissors");
 const outcomeDiv = document.getElementById("outcome");
 const userChoiceDiv = document.getElementById("userChoice");
 const vsDiv = document.getElementById("vs");
@@ -15,14 +15,16 @@ const compChoiceDiv = document.getElementById("compChoice");
 const humanScoreDiv = document.getElementById("humanScore");
 const compScoreDiv = document.getElementById("compScore");
 const finalWinnerDiv = document.getElementById("finalWinner");
-
+const replayBtn = document.createElement("button");
+replayBtn.id = "replay";
+replayBtn.className = "option";
 let userChoice = "";
 let humanScore = 0;
 let compScore = 0;
 
-rock.addEventListener("click", () => getHumanChoice("rock"));
-paper.addEventListener("click", () => getHumanChoice("paper"));
-scissors.addEventListener("click", () => getHumanChoice("scissors"));
+Rock.addEventListener("click", () => getHumanChoice("Rock"));
+Paper.addEventListener("click", () => getHumanChoice("Paper"));
+Scissors.addEventListener("click", () => getHumanChoice("Scissors"));
 
 function getComputerChoice() {
   let i = Math.floor(Math.random() * 3);
@@ -72,4 +74,12 @@ function endGame() {
     finalWinnerDiv.textContent = "You Win!";
     console.log("Final Win");
   }
+  document.body.appendChild(replayBtn);
 }
+
+replayBtn.addEventListener("click", () => {
+  humanScore = 0;
+  compScore = 0;
+  finalWinnerDiv.textContent = "";
+  replayBtn.remove();
+});
