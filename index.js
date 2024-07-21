@@ -18,6 +18,7 @@ const finalWinnerDiv = document.getElementById("finalWinner");
 const replayBtn = document.createElement("button");
 replayBtn.id = "replay";
 replayBtn.className = "option";
+replayBtn.textContent = "Play Again";
 let userChoice = "";
 let humanScore = 0;
 let compScore = 0;
